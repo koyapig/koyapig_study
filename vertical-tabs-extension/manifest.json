@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Vertical Tabs",
+  "version": "1.0.0",
+  "description": "タブをサイドパネルに縦に並べて表示します",
+  "permissions": [
+    "tabs",
+    "sidePanel"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Vertical Tabs"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
