@@ -126,5 +126,30 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
 chrome.tabs.onMoved.addListener(loadTabs);
 chrome.tabs.onActivated.addListener(loadTabs);
 
+// 設定パネルの開閉
+document.getElementById('settingsBtn').addEventListener('click', () => {
+  const panel = document.getElementById('settingsPanel');
+  panel.classList.toggle('hidden');
+});
+
+// 幅スライダーの処理
+const widthSlider = document.getElementById('widthSlider');
+const widthValue = document.getElementById('widthValue');
+
+widthSlider.addEventListener('input', (e) => {
+  const width = e.target.value;
+  widthValue.textContent = width + 'px';
+  document.body.style.maxWidth = width + 'px';
+  chrome.storage.local.set({ panelWidth: width });
+});
+
+// 保存された幅を読み込み
+chrome.storage.local.get(['panelWidth'], (result) => {
+  const savedWidth = result.panelWidth || 280;
+  widthSlider.value = savedWidth;
+  widthValue.textContent = savedWidth + 'px';
+  document.body.style.maxWidth = savedWidth + 'px';
+});
+
 // 初期読み込み
 loadTabs();

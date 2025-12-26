@@ -27,7 +27,13 @@ body {
   font-weight: 500;
 }
 
-#newTabBtn {
+.header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+#newTabBtn,
+#settingsBtn {
   background-color: #0e639c;
   color: white;
   border: none;
@@ -41,8 +47,54 @@ body {
   justify-content: center;
 }
 
-#newTabBtn:hover {
+#newTabBtn:hover,
+#settingsBtn:hover {
   background-color: #1177bb;
+}
+
+#settingsBtn {
+  background-color: #3c3c3c;
+  font-size: 14px;
+}
+
+#settingsBtn:hover {
+  background-color: #505050;
+}
+
+.settings-panel {
+  background-color: #2d2d2d;
+  padding: 12px 16px;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.settings-panel.hidden {
+  display: none;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-item label {
+  font-size: 12px;
+  color: #b0b0b0;
+  min-width: 60px;
+}
+
+#widthSlider {
+  flex: 1;
+  height: 4px;
+  cursor: pointer;
+  accent-color: #0e639c;
+}
+
+#widthValue {
+  font-size: 12px;
+  color: #909090;
+  min-width: 45px;
+  text-align: right;
 }
 
 .tab-list {

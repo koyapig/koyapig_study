@@ -5,7 +5,8 @@
   "description": "タブをサイドパネルに縦に並べて表示します",
   "permissions": [
     "tabs",
-    "sidePanel"
+    "sidePanel",
+    "storage"
   ],
   "side_panel": {
     "default_path": "sidepanel.html"
